@@ -4,10 +4,10 @@ if [ "$DZIEN" = 6 ]
 then
     echo "Weekend"
 else
-    if  [ "$DZIEN" = 7 ]
+    if [ "$DZIEN" = 7 ]
     then
-	echo "Weekend"
+        echo "Weekend"
     else
-	echo "Dzien roboczy"
+        echo "Dzien roboczy"
     fi
 fi

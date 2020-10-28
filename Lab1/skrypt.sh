@@ -1,10 +1,13 @@
 #!/bin/bash
-
-dzien=date | cut -d ' ' -f 1
-
-if [ $dzien == 'sun' ] || [ $dzien == 'sat' ]
+DZIEN='date +%u'
+if [ "$DZIEN" = 6 ]
 then
     echo "Weekend"
 else
-    echo "Dzien roboczy"
+    if  [ "$DZIEN" = 7 ]
+    then
+	echo "Weekend"
+    else
+	echo "Dzien roboczy"
+    fi
 fi

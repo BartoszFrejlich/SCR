@@ -1,0 +1,17 @@
+
+
+
+#!/bin/python3
+for i in range(0,10000000):
+    print(i)
+
+
+
+VirtualBox:~$ ./main.py | grep cosss | cat &
+VirtualBox:~$ ps f
+  PID TTY      STAT   TIME COMMAND
+22507 pts/2    Ss     0:00 bash
+23368 pts/2    R      0:00  \_ /bin/python3 ./main.py
+23369 pts/2    S      0:00  \_ grep --color=auto cosss
+23370 pts/2    S      0:00  \_ cat
+23371 pts/2    R+     0:00  \_ ps f

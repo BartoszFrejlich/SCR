@@ -1,0 +1,51 @@
+zad4.sh
+while sleep 1; do date; done
+
+
+
+VirtualBox:~/Pulpit/git/Lab2$ ps f
+  PID TTY      STAT   TIME COMMAND
+18933 pts/0    Ss     0:00 bash
+18948 pts/0    S+     0:00  \_ bash zad4.sh
+18959 pts/0    S+     0:00      \_ sleep 1
+
+
+
+VirtualBox:~/Pulpit/git/Lab2$ kill -SIGINT 18948
+VirtualBox:~/Pulpit/git/Lab2$ ps f
+  PID TTY      STAT   TIME COMMAND
+18933 pts/0    Ss     0:00 bash
+18948 pts/0    S+     0:00  \_ bash zad4.sh
+18959 pts/0    S+     0:00      \_ sleep 1
+
+
+
+VirtualBox:~/Pulpit/git/Lab2$ kill -SIGQUIT 18948
+VirtualBox:~/Pulpit/git/Lab2$ ps f
+  PID TTY      STAT   TIME COMMAND
+18933 pts/0    Ss     0:00 bash
+18948 pts/0    S+     0:00  \_ bash zad4.sh
+19846 pts/0    S+     0:00      \_ sleep 1
+
+
+
+VirtualBox:~/Pulpit/git/Lab2$ kill -SIGFPE 18948
+
+Błąd w obliczeniach zmiennoprzecinkowych (zrzut pamięci)
+
+
+
+VirtualBox:~/Pulpit/git/Lab2$ ps f
+  PID TTY      STAT   TIME COMMAND
+18933 pts/0    Ss     0:00 bash
+20073 pts/0    S+     0:00  \_ bash zad4.sh
+20103 pts/0    S+     0:00      \_ sleep 1
+
+
+
+VirtualBox:~/Pulpit/git/Lab2$ kill -SIGILL 20073
+
+
+
+Błędna instrukcja (zrzut pamięci)
+

@@ -1,0 +1,68 @@
+SIGSTOP i SIGCONT
+
+VirtualBox:~/Pulpit/git/Lab2$ sleep 60
+
+
+VirtualBox:~/Pulpit/git/Lab2$ ps f
+  PID TTY      STAT   TIME COMMAND
+22660 pts/0    Ss     0:00 bash
+22683 pts/0    S+     0:00  \_ sleep 60
+
+
+VirtualBox:~/Pulpit/git/Lab2$ kill -SIGSTOP 22683
+
+
+[1]+  Zatrzymano             sleep 60
+
+
+  PID TTY      STAT   TIME COMMAND
+22660 pts/0    Ss+    0:00 bash
+22683 pts/0    T      0:00  \_ sleep 6
+
+
+[1]+  Zakończono             sleep 60
+
+
+  PID TTY      STAT   TIME COMMAND
+22660 pts/0    Ss+    0:00 bash
+22410 pts/1    Ss     0:00 bash
+22698 pts/1    R+     0:00  \_ ps f
+
+
+ctr + Z
+
+
+VirtualBox:~/Pulpit/git/Lab2$ sleep 60
+
+
+VirtualBox:~/Pulpit/git/Lab2$ ps f
+  PID TTY      STAT   TIME COMMAND
+22660 pts/0    Ss     0:00 bash
+22715 pts/0    S+     0:00  \_ sleep 60
+
+
+^Z
+[1]+  Zatrzymano              sleep 60
+
+VirtualBox:~/Pulpit/git/Lab2$ ps f
+  PID TTY      STAT   TIME COMMAND
+22660 pts/0    Ss+    0:00 bash
+22715 pts/0    T      0:00  \_ sleep 60
+
+VirtualBox:~/Pulpit/git/Lab2$ fg
+sleep 60
+VirtualBox:~/Pulpit/git/Lab2$ 
+
+VirtualBox:~/Pulpit/git/Lab2$ ps f
+  PID TTY      STAT   TIME COMMAND
+22660 pts/0    Ss     0:00 bash
+22725 pts/0    S+     0:00  \_ sleep 60
+
+
+VirtualBox:~/Pulpit/git/Lab2$ sleep 10
+^Z
+[1]+  Zatrzymano              sleep 10
+-VirtualBox:~/Pulpit/git/Lab2$ bg
+[1]+ sleep 10 &
+-VirtualBox:~/Pulpit/git/Lab2$ 
+[1]+  Zakończono             sleep 10

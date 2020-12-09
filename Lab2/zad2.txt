@@ -1,0 +1,19 @@
+Trzykrotne uruchomienie terminala:
+
+VirtualBox:~$ ps f
+  PID TTY      STAT   TIME COMMAND
+22507 pts/0    Ss     0:00 bash
+22508 pts/0    S      0:00  \_ bash
+22509 pts/0    S+     0:00      \_ bash
+22410 pts/1    Ss     0:00 bash
+22511 pts/1    R+     0:00  \_ ps f
+
+Po zabiciu terminala w srodku:
+
+VirtualBox:~$ kill -9 22508
+VirtualBox:~$ ps f
+  PID TTY      STAT   TIME COMMAND
+22507 pts/0    Ss+    0:00 bash
+22410 pts/1    Ss     0:00 bash
+22513 pts/1    R+     0:00  \_ ps f
+22509 pts/0    S      0:00 bash+

@@ -1,0 +1,1 @@
+Wątki wyświetlają się w losowej kolejności nadanej przez scheduler, ponieważ ma do dyspozycji ograniczoną ilość zasobów.

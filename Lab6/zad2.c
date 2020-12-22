@@ -22,8 +22,8 @@ void* Hello(void* threadid)
 int main(int argc, char* argv[])
 {
     pthread_t threads[NTHREADS];
-    int rc;
     long t;
+    int rc;
     for (t = 0; t < NTHREADS; t++)
     {
         rc = pthread_create(&threads[t], NULL, Hello, (void*)t);

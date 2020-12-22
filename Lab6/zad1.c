@@ -6,11 +6,10 @@
 void *PrintHello(void *threadid)
 {
    long tid;
-   tid = (long)threadid;
+   tid=(long)threadid;
    printf("Hello SCR. Written by thread %ld!\n", tid);
    pthread_exit(NULL);
 }
-
 int main(int argc, char *argv[])
 {
    pthread_t threads[THREADS];
@@ -18,9 +17,8 @@ int main(int argc, char *argv[])
    long t;
    for(t=0; t<THREADS; t++)
    {
-     ret = pthread_create(&threads[t], NULL, PrintHello, (void *)t);
+     ret=pthread_create(&threads[t], NULL, PrintHello, (void *)t);
    }
-
 
    pthread_exit(NULL);
 } 

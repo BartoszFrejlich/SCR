@@ -1,0 +1,1 @@
+W programie bug3.c zawarty jest błąd w sposobie przekazywania danych. Kompiluje się poprawnie, ale po jego wykonaniu widać błąd w działaniu. Argument jest przekazywany jako zmienna, natomiast wiele argmentów przekazywanych jest przez strukturę.
